@@ -1,6 +1,7 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MentorFindScreen from './src/components/screens/MentorFindScreen';
+import MeetingsScreen from './src/components/screens/MeetingsScreen';
 
 const stack = createNativeStackNavigator();
 
@@ -13,7 +14,7 @@ export const App =()=> {
 return (
   <NavigationContainer>
       <stack.Navigator 
-      initialRouteName='MentorFindScreen'
+      initialRouteName='MeetingsScreen'
       screenOptions={{
         headerStyle: {backgroundColor:'black'},
         headerTintColor:'white',
@@ -26,7 +27,12 @@ return (
         component= {MentorFindScreen}
         options ={{title:'Mentors'}}
         />
-  
+
+      <stack.Screen
+        name='MeetingsScreen'
+        component= {MeetingsScreen}
+        options ={{title:'Mentors'}}
+        />
     
 
      </stack.Navigator>
