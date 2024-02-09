@@ -1,27 +1,34 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import { Calendar } from 'react-native-calendars';
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation hook
 
-const MeetingScreen = () => {
-
+const MeetingsScreen = () => {
+  const navigation = useNavigation(); // Initialize navigation
 
   const randomDates = {}; 
   
   // random date formula
   for (let i = 0; i < 5; i++) {
     const year = 2024;
-    const month = Math.floor(Math.random() * 12) + 1; // Random month from 1 to 12
+    const month = Math.floor(Math.random() * 12) + 1; 
     const day = Math.floor(Math.random() * 28) + 1; // Random day from 1 to 28
     const date = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
     randomDates[date] = { selected: true, selectedColor: 'red' };
   }
 
+  const handleFindMentor = () => {
+    navigation.navigate('MentorFindScreen'); // Navigate to MentorFindScreen
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.container1}>
-        {/* Large button on the top left */}
-        <TouchableOpacity style={styles.largeButton}>
-          <Text style={styles.largeButtonText}>Find Mentor</Text>
+        {/* Clickable "Find Mentor" button */}
+        <TouchableOpacity onPress={handleFindMentor} style={styles.findMentorButton}>
+          <View style={styles.findMentorButtonContainer}>
+            <Text style={styles.findMentorButtonText}>Find Mentor</Text>
+          </View>
         </TouchableOpacity>
         
         {/* "Choose Method" label */}
@@ -76,32 +83,32 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
   },
+  findMentorButton: {},
 
-  largeButton: {
+  findMentorButtonContainer: {
     backgroundColor: 'white',
     padding: 15,
-    borderRadius: 10,
-    marginBottom: 10,
-    borderColor: 'black',
+    alignItems: 'center',
     shadowColor: 'grey',
     shadowOffset: {
       width: 0,
       height: 2,
+      
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+  
   },
-
-  largeButtonText: {
+  findMentorButtonText: {
     color: 'black',
     fontSize: 16,
-    textAlign: 'center',
   },
   chooseMethodLabel: {
     fontSize: 18,
     textAlign: 'center',
-    marginBottom: 10,
+    marginTop:40,
+    marginBottom: 20,
   },
   buttonsContainer: {
     flexDirection: 'row',
@@ -150,4 +157,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MeetingScreen;
+export default MeetingsScreen;
