@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import MentorFindScreen from './src/components/screens/MentorFindScreen';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const stack = createNativeStackNavigator();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export const App =()=> {
+
+// Initialisations -------------------
+// State -----------------------------
+// Handlers --------------------------
+//View -------------------------------
+return (
+  <NavigationContainer>
+      <stack.Navigator 
+      initialRouteName='MentorFindScreen'
+      screenOptions={{
+        headerStyle: {backgroundColor:'black'},
+        headerTintColor:'white',
+
+
+      }} 
+      >
+        <stack.Screen
+        name='MentorFindScreen'
+        component= {MentorFindScreen}
+        options ={{title:'Mentors'}}
+        />
+  
+    
+
+     </stack.Navigator>
+   </NavigationContainer>
+  );};
+
+
+  export default App;
