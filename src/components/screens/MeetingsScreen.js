@@ -7,6 +7,7 @@ const MeetingsScreen = () => {
   const navigation = useNavigation(); // Initialize navigation
 
   const randomDates = {}; 
+   
   
   // random date formula
   for (let i = 0; i < 5; i++) {
