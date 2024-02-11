@@ -23,10 +23,18 @@ const MentorItem = ({ mentor, onSelect }) => {
 
 const styles = StyleSheet.create({
   item: {
+    backgroundColor: 'white',
     padding: 10,
     marginBottom: 10,
-    backgroundColor: '#f0f0f0',
     borderRadius: 10,
+    shadowColor: 'grey',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
 
   },
   content: {
@@ -36,8 +44,8 @@ const styles = StyleSheet.create({
   },
   profileImageContainer: {
     borderWidth: 2,
-    borderColor: 'red', // Red ring around the profile image
-    borderRadius: 50, // Make it circular
+    borderColor: 'red', 
+    borderRadius: 50, 
     overflow: 'hidden',
   },
   profileImage: {
@@ -65,7 +73,7 @@ const styles = StyleSheet.create({
   ratingLabel: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: 'black',
+    color: 'darkgrey',
     marginBottom: 5,
   },
   rating: {

@@ -135,13 +135,11 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   calendarContainer: {
-    marginBottom: 20,
   },
   requestButton: {
     backgroundColor: '#9C2929',
     padding: 15,
     borderRadius: 10,
-    marginTop: 30,
     shadowColor: 'grey',
     shadowOffset: {
       width: 0,
@@ -150,6 +148,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+    marginTop: 80,
+    position: 'absolute',
+    bottom: 20,
+    marginLeft: 160,
   },
   requestButtonText: {
     color: 'white',

@@ -16,7 +16,7 @@ return (
       <stack.Navigator 
       initialRouteName='MeetingsScreen'
       screenOptions={{
-        headerStyle: {backgroundColor:'black'},
+        headerStyle: {backgroundColor:'#9C2929'},
         headerTintColor:'white',
 
 
@@ -31,7 +31,7 @@ return (
       <stack.Screen
         name='MeetingsScreen'
         component= {MeetingsScreen}
-        options ={{title:'Mentors'}}
+        options ={{title:'Meeting'}}
         />
     
 
