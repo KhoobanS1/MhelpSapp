@@ -1,14 +1,12 @@
 import { ScrollView, StyleSheet} from 'react-native';
 import MentorItem from './MentorItem';
 
-
 const MentorList = ({mentors,onSelect}) => {
 // Initialisations ---------------------
 // State -------------------------------
 // Handlers ----------------------------
 // View --------------------------------
 return (
-
 
 <ScrollView style={styles.container}>
 {mentors.map((mentor) => {

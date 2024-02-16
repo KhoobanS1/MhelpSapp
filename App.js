@@ -1,6 +1,8 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MentorFindScreen from './src/components/screens/MentorFindScreen';
+import MeetingsScreen from './src/components/screens/MeetingsScreen';
+import HomeScreen from './src/components/screens/HomeScreen';
 
 const stack = createNativeStackNavigator();
 
@@ -13,11 +15,10 @@ export const App =()=> {
 return (
   <NavigationContainer>
       <stack.Navigator 
-      initialRouteName='MentorFindScreen'
+      initialRouteName='MeetingsScreen'
       screenOptions={{
-        headerStyle: {backgroundColor:'black'},
+        headerStyle: {backgroundColor:'#9C2929'},
         headerTintColor:'white',
-
 
       }} 
       >
@@ -26,12 +27,23 @@ return (
         component= {MentorFindScreen}
         options ={{title:'Mentors'}}
         />
-  
-    
 
-     </stack.Navigator>
-   </NavigationContainer>
-  );};
+      <stack.Screen
+        name='MeetingsScreen'
+        component= {MeetingsScreen}
+        options ={{title:'Meeting'}}
+        />
+
+            <stack.Screen
+        name='HomeScreen'
+        component= {HomeScreen}
+        options ={{title:'Home'}}
+        />
 
 
-  export default App;
+          </stack.Navigator>
+          </NavigationContainer>
+          );};
+
+export default App;
+
