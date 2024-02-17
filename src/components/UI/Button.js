@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     gap: 5,
-    position: "absolute",
   },
 
   label: {

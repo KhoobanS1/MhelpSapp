@@ -4,21 +4,16 @@ import { StyleSheet, View, Text } from "react-native";
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      {/* Main Content */}
       <View style={styles.content}>
-        {/* Calendar Container */}
         <View style={[styles.largeBox, styles.calendarContainer]}>
           <Text style={styles.nameText}>Calendar</Text>
         </View>
 
-        {/* Activity and Task Containers */}
         <View style={styles.smallBoxContainer}>
-          {/* Activity Container */}
           <View style={[styles.smallBox, styles.taskContainer]}>
             <Text style={styles.nameText}>Tasks</Text>
           </View>
 
-          {/* Task Container */}
           <View style={[styles.smallBox, styles.activityContainer]}>
             <Text style={styles.nameText}>Activity</Text>
           </View>
@@ -56,7 +51,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     marginBottom: 20,
-    flexDirection: "row", // added flexDirection to align the elements horizontally
+    flexDirection: "row",
   },
   smallBoxContainer: {
     flexDirection: "row",
