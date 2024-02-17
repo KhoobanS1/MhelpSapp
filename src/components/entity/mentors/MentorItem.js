@@ -1,12 +1,15 @@
-import React from 'react';
-import { Pressable, StyleSheet, Text, View, Image } from 'react-native';
+import React from "react";
+import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 
 const MentorItem = ({ mentor, onSelect }) => {
   return (
     <Pressable onPress={() => onSelect(mentor)} style={styles.item}>
       <View style={styles.content}>
         <View style={styles.profileImageContainer}>
-          <Image source={{ uri: mentor.MentorsImage }} style={styles.profileImage} />
+          <Image
+            source={{ uri: mentor.MentorsImage }}
+            style={styles.profileImage}
+          />
         </View>
         <View style={styles.details}>
           <Text style={styles.name}>{mentor.MentorsName}</Text>
@@ -23,11 +26,11 @@ const MentorItem = ({ mentor, onSelect }) => {
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     padding: 10,
     marginBottom: 10,
     borderRadius: 10,
-    shadowColor: 'grey',
+    shadowColor: "grey",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -35,18 +38,17 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-
   },
   content: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   profileImageContainer: {
     borderWidth: 2,
-    borderColor: 'red', 
-    borderRadius: 50, 
-    overflow: 'hidden',
+    borderColor: "red",
+    borderRadius: 50,
+    overflow: "hidden",
   },
   profileImage: {
     width: 50,
@@ -58,30 +60,29 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 5,
   },
   profession: {
     fontSize: 14,
-    color: 'gray',
+    color: "gray",
     marginBottom: 5,
   },
   ratingContainer: {
-    flexDirection: 'column',
-    alignItems: 'flex-end',
+    flexDirection: "column",
+    alignItems: "flex-end",
   },
   ratingLabel: {
     fontSize: 14,
-    fontWeight: 'bold',
-    color: 'darkgrey',
+    fontWeight: "bold",
+    color: "darkgrey",
     marginBottom: 5,
   },
   rating: {
     fontSize: 16,
-    color: 'purple', // Dark purple color for the rating number
-    fontWeight: 'bold',
+    color: "purple", // Dark purple color for the rating number
+    fontWeight: "bold",
   },
 });
 
 export default MentorItem;
-
