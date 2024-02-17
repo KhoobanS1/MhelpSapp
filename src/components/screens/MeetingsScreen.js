@@ -1,33 +1,31 @@
+// MeetingsScreen.js
 import React from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
-import { Calendar } from "react-native-calendars";
-import { useNavigation } from "@react-navigation/native"; // Import useNavigation hook
+import { useNavigation } from "@react-navigation/native";
 import Screen from "../layout/Screen";
+import { Button, ButtonTray } from "../UI/Button";
+import Icons from "../UI/Icons";
+import Calendar from "../UI/Calendar";
 
 const MeetingsScreen = () => {
-  const navigation = useNavigation(); // Initialize navigation
-
-  const randomDates = {};
-
-  // random date formula
-  for (let i = 0; i < 5; i++) {
-    const year = 2024;
-    const month = Math.floor(Math.random() * 12) + 1;
-    const day = Math.floor(Math.random() * 28) + 1; // Random day from 1 to 28
-    const date = `${year}-${month < 10 ? "0" + month : month}-${
-      day < 10 ? "0" + day : day
-    }`;
-    randomDates[date] = { selected: true, selectedColor: "red" };
-  }
+  const navigation = useNavigation();
 
   const handleFindMentor = () => {
-    navigation.navigate("MentorFindScreen"); // Navigate to MentorFindScreen
+    navigation.navigate("MentorFindScreen");
+  };
+
+  const handleRequestMeeting = () => {
+    alert("Meeting requested!");
+  };
+
+  const handleDayPress = (day) => {
+    console.log("Selected day: ", day);
+    // You can handle the selected day here
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.container1}>
-        {/* Clickable "Find Mentor" button */}
         <TouchableOpacity
           onPress={handleFindMentor}
           style={styles.findMentorButton}
@@ -37,10 +35,8 @@ const MeetingsScreen = () => {
           </View>
         </TouchableOpacity>
 
-        {/* "Choose Method" label */}
         <Text style={styles.chooseMethodLabel}>Choose Method</Text>
 
-        {/* Selective buttons for online and face to face */}
         <View style={styles.buttonsContainer}>
           <TouchableOpacity style={styles.selectiveButton}>
             <Text>Online</Text>
@@ -50,16 +46,18 @@ const MeetingsScreen = () => {
           </TouchableOpacity>
         </View>
 
-        {/* Calendar */}
         <View style={styles.calendarContainer}>
-          <Calendar markedDates={randomDates} />
+          <Calendar onDayPress={handleDayPress} />
         </View>
-
-        {/* Request button */}
-        <TouchableOpacity style={styles.requestButton}>
-          <Text style={styles.requestButtonText}>Request</Text>
-        </TouchableOpacity>
       </View>
+      <ButtonTray>
+        <Button
+          label="Request"
+          onClick={handleRequestMeeting}
+          styleButton={styles.requestButton}
+          styleLabel={styles.requestButtonText}
+        />
+      </ButtonTray>
     </View>
   );
 };
@@ -77,7 +75,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 10,
     width: "100%",
-    height: "80%",
+    height: "95%",
     shadowColor: "grey",
     shadowOffset: {
       width: 0,
@@ -88,7 +86,6 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   findMentorButton: {},
-
   findMentorButtonContainer: {
     backgroundColor: "white",
     padding: 15,
@@ -136,6 +133,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   calendarContainer: {},
+
   requestButton: {
     backgroundColor: "#9C2929",
     padding: 15,
@@ -150,13 +148,14 @@ const styles = StyleSheet.create({
     elevation: 5,
     marginTop: 80,
     position: "absolute",
-    bottom: 20,
+    bottom: 50,
     marginLeft: 160,
   },
   requestButtonText: {
     color: "white",
     fontSize: 16,
     textAlign: "center",
+    fontWeight: "bold",
   },
 });
 
