@@ -1,14 +1,12 @@
-import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text } from 'react-native';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, View, Text } from "react-native";
 
 const Screen = ({ children }) => {
   return (
     <View style={styles.screen}>
       {/* Main content */}
-      <View style={styles.content}>
-        {children}
-      </View>
+      <View style={styles.content}>{children}</View>
 
       {/* Navbar */}
       <View style={styles.navbar}>
@@ -26,20 +24,20 @@ const Screen = ({ children }) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
   content: {
     padding: 15,
     flex: 1,
   },
   navbar: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    width: '100%',
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "white",
+    width: "100%",
     height: 80,
-    shadowColor: 'grey',
+    shadowColor: "grey",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -50,7 +48,7 @@ const styles = StyleSheet.create({
   },
   navbarItem: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 

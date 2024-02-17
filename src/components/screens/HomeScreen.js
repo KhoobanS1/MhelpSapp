@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
 
 const HomeScreen = () => {
   return (
@@ -31,23 +31,23 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+    width: "100%",
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
   content: {
     flex: 1,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
   largeBox: {
-    backgroundColor: '#9C2929',
+    backgroundColor: "#9C2929",
     padding: 20,
     borderRadius: 10,
-    height: '30%',
-    shadowColor: 'grey',
+    height: "30%",
+    shadowColor: "grey",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -56,22 +56,22 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     marginBottom: 20,
-    flexDirection: 'row', // added flexDirection to align the elements horizontally
+    flexDirection: "row", // added flexDirection to align the elements horizontally
   },
   smallBoxContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '95%',
-    height: '50%',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "95%",
+    height: "50%",
     marginBottom: 20,
   },
   smallBox: {
-    backgroundColor: '#9C2929',
+    backgroundColor: "#9C2929",
     padding: 20,
     borderRadius: 10,
-    width: '48%',
-    height: '40%',
-    shadowColor: 'grey',
+    width: "48%",
+    height: "40%",
+    shadowColor: "grey",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   calendarContainer: {
-    width: '95%',
+    width: "95%",
     padding: 20,
     marginTop: 20,
   },
@@ -90,11 +90,10 @@ const styles = StyleSheet.create({
 
   nameText: {
     fontSize: 20,
-    color: 'white',
-    fontWeight: 'bold',
-    width: '100%',
+    color: "white",
+    fontWeight: "bold",
+    width: "100%",
   },
-
 });
 
 export default HomeScreen;
