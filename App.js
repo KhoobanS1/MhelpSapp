@@ -19,7 +19,7 @@ export const App = () => {
   return (
     <NavigationContainer>
       <stack.Navigator
-        initialRouteName="HomeScreen"
+        initialRouteName="MentorFindScreen"
         screenOptions={{
           headerStyle: { backgroundColor: "#9C2929" },
           headerTintColor: "white",
