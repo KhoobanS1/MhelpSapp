@@ -4,6 +4,7 @@ import MentorFindScreen from "./src/components/screens/MentorFindScreen";
 import MeetingsScreen from "./src/components/screens/MeetingsScreen";
 import HomeScreen from "./src/components/screens/HomeScreen";
 import SignInScreen from "./src/components/screens/SignInScreen";
+import SignUpScreen from "./src/components/screens/SignUpScreen";
 
 const stack = createNativeStackNavigator();
 
@@ -15,7 +16,7 @@ export const App = () => {
   return (
     <NavigationContainer>
       <stack.Navigator
-        initialRouteName="SignInScreen"
+        initialRouteName="SignUpScreen"
         screenOptions={{
           headerStyle: { backgroundColor: "#9C2929" },
           headerTintColor: "white",
@@ -43,6 +44,11 @@ export const App = () => {
           name="SignInScreen"
           component={SignInScreen}
           options={{ title: "Sign In" }}
+        />
+        <stack.Screen
+          name="SignUpScreen"
+          component={SignUpScreen}
+          options={{ title: "Sign Up" }}
         />
       </stack.Navigator>
     </NavigationContainer>

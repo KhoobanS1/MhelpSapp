@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View, Text, useWindowDimensions } from "react-native";
 import CustomInput from "../CustomInput/CustomInput";
 import CustomButton from "../UI/CustomButton/CustomButton";
+import SocialSignInButtons from "../UI/SocialSignInButtons/SocialSignInButtons";
 
 const SignInScreen = () => {
   const [email, setEmail] = useState("");
@@ -14,14 +15,6 @@ const SignInScreen = () => {
 
   const onForgotPasswordPressed = () => {
     console.warn("onForgotPasswordPressed");
-  };
-
-  const onSignInOutlook = () => {
-    console.warn("onSignInOutlook");
-  };
-
-  const onSignInApple = () => {
-    console.warn("onSignInApple");
   };
 
   const onSignUpPressed = () => {
@@ -52,18 +45,8 @@ const SignInScreen = () => {
         type="TERTIARY"
       />
 
-      <CustomButton
-        text={"Sign in with Outlook"}
-        onPress={onSignInOutlook}
-        bgColor="white"
-        fgColor="blue"
-      />
-      <CustomButton
-        text={"Sign in with Apple"}
-        onPress={onSignInApple}
-        bgColor="black"
-        fgColor="white"
-      />
+      <SocialSignInButtons />
+
       <CustomButton
         text="Don't have an account? create one"
         onPress={onSignUpPressed}
