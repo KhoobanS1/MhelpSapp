@@ -1,23 +1,24 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
+import HomeButtons from "../UI/HomeButton/HomeButtons";
+import SmallBoxButtons from "../UI/HomeButton/SmallBoxButtons";
 
 const HomeScreen = () => {
+  const onMainPressed = () => {
+    console.warn("Main Pressed");
+  };
+  const onTasksPressed = () => {
+    console.warn("Tasks Pressed");
+  };
+  const onActivityPressed = () => {
+    console.warn("Activity Pressed");
+  };
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
-        <View style={[styles.largeBox, styles.calendarContainer]}>
-          <Text style={styles.nameText}>Calendar</Text>
-        </View>
-
-        <View style={styles.smallBoxContainer}>
-          <View style={[styles.smallBox, styles.taskContainer]}>
-            <Text style={styles.nameText}>Tasks</Text>
-          </View>
-
-          <View style={[styles.smallBox, styles.activityContainer]}>
-            <Text style={styles.nameText}>Activity</Text>
-          </View>
-        </View>
+      <HomeButtons text={"Main"} onPress={onMainPressed} />
+      <View style={styles.smallBoxContainer}>
+        <SmallBoxButtons text={"Tasks"} onPress={onTasksPressed} />
+        <SmallBoxButtons text={"Activity"} onPress={onActivityPressed} />
       </View>
     </View>
   );
@@ -60,34 +61,11 @@ const styles = StyleSheet.create({
     height: "50%",
     marginBottom: 20,
   },
-  smallBox: {
-    backgroundColor: "#9C2929",
-    padding: 20,
-    borderRadius: 10,
-    width: "48%",
-    height: "40%",
-    shadowColor: "grey",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
+
   calendarContainer: {
     width: "95%",
     padding: 20,
     marginTop: 20,
-  },
-  taskContainer: {},
-  activityContainer: {},
-
-  nameText: {
-    fontSize: 20,
-    color: "white",
-    fontWeight: "bold",
-    width: "100%",
   },
 });
 
