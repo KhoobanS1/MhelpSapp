@@ -8,6 +8,7 @@ import SignUpScreen from "./src/components/screens/SignUpScreen";
 import ConfirmEmailScreen from "./src/components/screens/ConfirmEmailScreen";
 import ForgotPasswordScreen from "./src/components/screens/ForgotPasswordScreen";
 import NewPasswordScreen from "./src/components/screens/NewPasswordScreen";
+import Login from "./src/components/screens/Login/Login";
 
 const stack = createNativeStackNavigator();
 
@@ -19,7 +20,7 @@ export const App = () => {
   return (
     <NavigationContainer>
       <stack.Navigator
-        initialRouteName="MentorFindScreen"
+        initialRouteName="Login"
         screenOptions={{
           headerStyle: { backgroundColor: "#9C2929" },
           headerTintColor: "white",
@@ -67,6 +68,11 @@ export const App = () => {
           name="NewPasswordScreen"
           component={NewPasswordScreen}
           options={{ title: "Reset Password" }}
+        />
+        <stack.Screen
+          name="Login"
+          component={Login}
+          options={{ title: "Login" }}
         />
       </stack.Navigator>
     </NavigationContainer>
